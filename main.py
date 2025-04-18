@@ -34,7 +34,7 @@ class MyPlugin(Star):
         voice_adress = os.path.join(voice_path, voice_name)
         yield event.plain_result(f"{voice_name[:-5]}")
         async for message in self.send_voice_message(event, voice_adress):
-            yield event.plain_result(message)
+                        yield event.plain_result(message)
                         yield message # 发送语音消息
     @filter.command("wsde_list")
     async def wsde_list_handler(self, event: AstrMessageEvent):
