@@ -27,12 +27,12 @@ class MyPlugin(Star):
             voice_num = random.randint(0, len(voice_content)-1)
             voice_name = voice_content[voice_num]
         else:
-            if message[-4::]!= ".wav":
-                 voice_name = message + ".wav"
+            if message[-4::]!= ".silk":
+                 voice_name = message + ".silk"
             else:
                  voice_name = message
         voice_adress = os.path.join(voice_path, voice_name)
-        yield event.plain_result(f"{'__'+voice_name[:-4:]}")
+        yield event.plain_result(f"{'__'+voice_name[:-5:]}")
         async for message in self.send_voice_message(event, voice_adress):
                         yield message # 发送语音消息
     @filter.command("wsde_list")
