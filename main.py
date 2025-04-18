@@ -4,7 +4,7 @@ import random
 import os
 
 current_dir = os.path.abspath(os.path.dirname(__file__))
-voice_content = os.listdir(current_dir + "//" + "voice_jp")   # 当前脚本所在目录
+voice_content = os.listdir(current_dir + "\" + "voice_jp")   # 当前脚本所在目录
 
 @register("astrbot_plugin_wsde", "bushikq", "维什戴尔随机语音插件", "2.1")
 class MyPlugin(Star):
@@ -21,7 +21,7 @@ class MyPlugin(Star):
              return
         else:
              language = "voice_jp"
-        voice_path =current_dir + "//" + language  # 拼接voice子目录
+        voice_path =current_dir + "\" + language  # 拼接voice子目录
         voice_content = os.listdir(voice_path)  # 获取voice子目录下所有文件
         if not message or message.strip() == "":
             voice_num = random.randint(0, len(voice_content)-1)
